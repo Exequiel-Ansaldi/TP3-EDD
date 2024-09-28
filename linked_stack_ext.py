@@ -40,24 +40,3 @@ class LinkedStackExt(LinkedStackExtAbstract, LinkedStack):
         for _ in range(other -1):
             for elementos in elementos_repetidos:
                 self.push(elementos)
-
-    def __reversed__(self) -> None:
-        pila_temp = []
-        while not self.is_empty():
-            pila_temp.append(self.pop())
-        pila_temp.reverse()
-        while pila_temp:
-            self.push(pila_temp.pop())
-
-    def pop(self) -> None:
-       if self.is_empty():
-            raise Exception("Pila vacía.")
-       self._head = self._head.next 
-       self._size -= 1
-
-    def add_first(self, other: Any) -> None:
-        self.push(other)
-        
-    def __iadd__(self, other: List[Any]) -> None:
-        for elementos in other:
-            self.add_first(elementos)
