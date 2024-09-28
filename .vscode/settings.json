@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./Punto 1 y 2",
+        "./Punto 3 y 4"
+    ]
+}

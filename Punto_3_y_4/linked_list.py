@@ -1,5 +1,5 @@
 from typing import Any, Optional, Iterable
-from ..list_node import ListNode
+from list_node import ListNode
 
 class LinkedList:
     """Implementación de una Lista utilizando representación por enlaces."""
