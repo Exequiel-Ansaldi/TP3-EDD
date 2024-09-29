@@ -11,16 +11,15 @@ class LinkedExtClient(LinkedListExt):
             print("Añadiendo elementos al inicio de la lista...")
             self.linked_list.add_first(10)
             print(f"Lista después de agregar elementos: {self.linked_list}")
-
-            print("Eliminando el último elemento...")
-            self.linked_list.pop()  # Asegúrate de que este método esté implementado
+            
+            self.linked_list.pop()  
             print(f"Lista después de eliminar el último elemento: {self.linked_list}")
 
-            print("Añadiendo una lista de elementos con '+='...")
-            self.linked_list += [100, 200, 300]  # Asegúrate de que este método esté implementado
+            print("Añadiendo una lista de elementos ")
+            self.linked_list += [100, 200, 300] 
             print(f"Lista después de agregar con '+=': {self.linked_list}")
             print("Invirtiendo la lista...")
-            self.linked_list.__reversed__()  # Asegúrate de que este método esté implementado
+            self.linked_list.__reversed__() 
             print(f"Lista después de invertir: {self.linked_list}")
 
 if __name__ == "__main__":
