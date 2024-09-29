@@ -13,8 +13,8 @@ class Deque (DequeAbstract, ListNode):
         return self._size
     
     def __str__(self) -> str:
-        resultado = ""
-        actual = self
+        resultado = " "
+        actual = self._head
         while actual:
             resultado += str(actual.element) + "  "
             actual = actual.next
