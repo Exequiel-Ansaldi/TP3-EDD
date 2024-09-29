@@ -19,7 +19,6 @@ class LinkedExtClient(LinkedListExt):
             print("Añadiendo una lista de elementos con '+='...")
             self.linked_list += [100, 200, 300]  # Asegúrate de que este método esté implementado
             print(f"Lista después de agregar con '+=': {self.linked_list}")
-
             print("Invirtiendo la lista...")
             self.linked_list.__reversed__()  # Asegúrate de que este método esté implementado
             print(f"Lista después de invertir: {self.linked_list}")

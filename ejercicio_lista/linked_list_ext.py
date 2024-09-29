@@ -8,7 +8,7 @@ class LinkedListExt(LinkedList, LinkedListExtAbstract):
      
     def __reversed__(self) -> None:
         stack = LinkedStack()  
-        actual = self._header
+        actual = self._header.next
         while actual is not None:
             stack.push(actual.element)
             actual = actual.next
@@ -30,12 +30,11 @@ class LinkedListExt(LinkedList, LinkedListExtAbstract):
         self._size -= 1 
 
     def add_first(self, other: Any) -> None:
-       """Agrega un elemento al inicio de la lista."""
-       if other is not None:  # Asegúrate de que el elemento no sea None
-            new_node = ListNode(other)  # Crea un nuevo nodo
-            new_node.next = self._header.next  # Enlaza el nuevo nodo al siguiente
-            self._header.next = new_node  # Actualiza el siguiente del nodo dummy
-            self._size += 1  # Incrementa el tamaño
+       if other is not None:  
+            new_node = ListNode(other)  
+            new_node.next = self._header.next  
+            self._header.next = new_node  
+            self._size += 1 
 
     def __iadd__(self, other: List[Any]) -> None:
         for elementos in reversed(other): 
