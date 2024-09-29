@@ -30,15 +30,12 @@ class LinkedListExt(LinkedList, LinkedListExtAbstract):
         self._size -= 1 
 
     def add_first(self, other: Any) -> None:
-        if other is not None:  # Ensure the element is not None
-            nuevo_nodo = ListNode(other)  
-            # If it's the first element, skip the dummy header
-        if self._header.element is None and self._header.next is None:
-            self._header = nuevo_nodo  # Replace the dummy header with the new node
-        else:
-            nuevo_nodo.next = self._header  # Point new node to the current first node
-            self._header = nuevo_nodo  # Set the new node as the header
-        self._size += 1
+       """Agrega un elemento al inicio de la lista."""
+       if other is not None:  # Asegúrate de que el elemento no sea None
+            new_node = ListNode(other)  # Crea un nuevo nodo
+            new_node.next = self._header.next  # Enlaza el nuevo nodo al siguiente
+            self._header.next = new_node  # Actualiza el siguiente del nodo dummy
+            self._size += 1  # Incrementa el tamaño
 
     def __iadd__(self, other: List[Any]) -> None:
         for elementos in reversed(other): 
