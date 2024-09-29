@@ -1,24 +1,28 @@
 from linked_list_ext import LinkedListExt
 
-class linked_list_ext_client(LinkedListExt):
+class LinkedExtClient(LinkedListExt):
+    def __init__(self):
+            self.linked_list = LinkedListExt() 
 
-    linked_list = LinkedListExt()
+            self.linked_list.append(15)
+            self.linked_list.append(23)
+            self.linked_list.append(3)
 
-    print("Añadiendo elementos al inicio de la lista...")
-    linked_list.add_first(10)
-    linked_list.add_first(20)
-    linked_list.add_first(30)
-    print(f"Lista después de agregar elementos: {linked_list}")
+            print("Añadiendo elementos al inicio de la lista...")
+            self.linked_list.add_first(10)
+            print(f"Lista después de agregar elementos: {self.linked_list}")
 
-    
-    print("Eliminando el último elemento...")
-    linked_list.pop()
-    print(f"Lista después de eliminar el último elemento: {linked_list}")
+            print("Eliminando el último elemento...")
+            self.linked_list.pop()  # Asegúrate de que este método esté implementado
+            print(f"Lista después de eliminar el último elemento: {self.linked_list}")
 
-    print("Añadiendo una lista de elementos con '+='...")
-    linked_list += [100, 200, 300]
-    print(f"Lista después de agregar con '+=': {linked_list}")
+            print("Añadiendo una lista de elementos con '+='...")
+            self.linked_list += [100, 200, 300]  # Asegúrate de que este método esté implementado
+            print(f"Lista después de agregar con '+=': {self.linked_list}")
 
-    print("Invirtiendo la lista...")
-    linked_list.__reversed__()
-    print(f"Lista después de invertir: {linked_list}")
+            print("Invirtiendo la lista...")
+            self.linked_list.__reversed__()  # Asegúrate de que este método esté implementado
+            print(f"Lista después de invertir: {self.linked_list}")
+
+if __name__ == "__main__":
+    cliente = LinkedExtClient()
