@@ -20,4 +20,3 @@ class Tramite ():
                 f"Requerimiento: {self.requerimiento}\n"
                 f"Estado: {estado}\n")
     
-
