@@ -2,6 +2,7 @@
     "python.analysis.extraPaths": [
         "./Punto 1 y 2",
         "./Punto 3 y 4",
-        "./ejercicio_cola"
+        "./ejercicio_cola",
+        "./ejercicio_base_de_datos"
     ]
 }
