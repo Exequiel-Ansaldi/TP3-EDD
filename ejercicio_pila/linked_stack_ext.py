@@ -2,6 +2,8 @@ from linked_stack import LinkedStack
 from linked_stack_ext_abstract import LinkedStackExtAbstract
 from typing import Any, List
 
+from list_node import ListNode
+
 class LinkedStackExt(LinkedStackExtAbstract, LinkedStack):
 
     def multi_pop(self, num: int) -> List[Any]:
@@ -35,8 +37,12 @@ class LinkedStackExt(LinkedStackExtAbstract, LinkedStack):
         elementos_repetidos = []
         actual = self._head
         while actual is not None:
-            elementos_repetidos.append(actual)
+            elementos_repetidos.append(actual.element)
             actual = actual.next
         for _ in range(other -1):
-            for elementos in elementos_repetidos:
-                self.push(elementos)
+           actual = self._head
+        while actual.next:
+            actual = actual.next
+        for elemento in elementos_repetidos:
+            actual.next = ListNode(elemento)
+            actual = actual.next
