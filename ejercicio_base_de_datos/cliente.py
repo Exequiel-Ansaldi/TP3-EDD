@@ -14,9 +14,9 @@ def main():
         print("4. Marcar trámite como terminado")
         print("5. Salir")
         
-        choice = input("Seleccione una opción: ")
+        eleccion = input("Seleccione una opción: ")
 
-        if choice == '1':
+        if eleccion == '1':
             numero = int(input("Ingrese número del trámite: "))
             apellido = input("Ingrese apellido: ")
             nombre = input("Ingrese nombre: ")
@@ -27,14 +27,14 @@ def main():
             tramites_admin.add_tramite(tramite)
             print("Trámite agregado exitosamente.")
 
-        elif choice == '2':
+        elif eleccion == '2':
             tramite = tramites_admin.remove_tramite()
             if tramite:
                 print(f"Trámite {tramite.numero} eliminado.")
             else:
                 print("No hay trámites para quitar.")
 
-        elif choice == '3':
+        elif eleccion == '3':
             tramites = tramites_admin.list_tramites()
             if tramites:
                 print("Trámites en la base de datos:")
@@ -43,12 +43,12 @@ def main():
             else:
                 print("No hay trámites en la base de datos.")
 
-        elif choice == '4':
+        elif eleccion == '4':
             numero = int(input("Ingrese número del trámite a marcar como terminado: "))
             tramites_admin.mark_tramite_as_terminada(numero)
             print(f"Trámite {numero} marcado como terminado.")
 
-        elif choice == '5':
+        elif eleccion == '5':
             print("Saliendo del programa...")
             sys.exit(0)
 
