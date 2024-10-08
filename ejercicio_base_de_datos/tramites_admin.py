@@ -10,6 +10,21 @@ class TramitesAdmin:
         self.tramites_queue = LinkedQueueExt()  # Cola para manejar trámites en memoria
         self.create_table()  # Crea la tabla si no existe
 
+    def cargar_tramites_desde_bd(self):
+        with sqlite3.connect(self.db_name) as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT numero, apellido, nombre, requerimiento, terminada FROM Tramite')
+            tramites = cursor.fetchall()
+            for numero, apellido, nombre, requerimiento, terminada in tramites:
+                tramite = Tramite(numero, apellido, nombre, requerimiento, bool(terminada))
+                self.tramites_queue.enqueue(tramite)
+                # CREATE TABLE IF NOT EXISTS tramites (
+                #                 numero INTEGER PRIMARY KEY,
+                #                 apellido TEXT,
+                #                 nombre TEXT,
+                #                 requerimiento TEXT,
+                #                 terminada INTEGER
+
     def create_table(self):
         with sqlite3.connect(self.db_name) as conn:
             cursor = conn.cursor()

@@ -5,6 +5,7 @@ from tramites_admin import TramitesAdmin
 def main():
     db_name = "tramites.db" 
     tramites_admin = TramitesAdmin(db_name)  
+    tramites_admin.cargar_tramites_desde_bd()
 
     while True:
         print("\nMenu:")
