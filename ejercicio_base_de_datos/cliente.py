@@ -49,7 +49,7 @@ def main():
             print(f"Trámite {numero} marcado como terminado.")
 
         elif eleccion == '5':
-            print("Saliendo del programa...")
+            print("Saliendo del programa.")
             sys.exit(0)
 
         else:
